@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <script src="static/js/shipei.js"></script>
+    <script src="static/js/echarts.min.js"></script>
+    <script src="static/js/jquery-1.10.2.js"></script>
+    <script src="static/js/echarts-gl.min.js"></script>
+    <script src="static/js/world.js"></script>
+    <script src="static/js/papaparse.min.js"></script>
+</head>
+
+<body>
+    <div class="bg">
+        <!-- 顶部 -->
+        <div class="header">
+            <span class="header-title">全 球 疫 情</span>
+            <span class="header-text">综合监控平台</span>
+        </div>
+        <!-- 内容 -->
+        <div class="wrap">
+            <!-- 左侧 -->
+            <div class="left fl">
+                <div class="left-header">
+                    <span>病例排名Top10</span>
+                    <select id="barSwitch">
+                        <option value="cases">确诊病例排名</option>
+                        <option value="deaths">死亡病例排名</option>
+                        <option value="recovered">康复病例排名</option>
+                    </select>
+                    <div id="left-header-nong" style="width: 100%;height: 100%;" class="left-header-nong"></div>
+                </div>
+                <div class="left-mid">
+                    <span>接种国家top10</span>
+                    <div id="left-mid-nong" style="width: 100%;height: 100%;" class="left-header-nong"></div>
+                </div>
+                <div class="left-bottom">
+                    <span>全球确诊病例总数</span>
+                    <span>疫苗（至少接种1剂）接种率</span>
+                    <div id="left-bottom-nong" style="width: 100%;height: 100%;" class="left-header-nong"></div>
+                </div>
+            </div>
+            <!-- 中间 -->
+            <div class="center fl">
+                <!-- 地图 -->
+                <div class="center-map">
+                   <div id="map" style="width: 100%;height: 100%;"></div>
+                </div>
+                <div class="center-offline">
+                    <div class="center-offline-header">
+                        <p>全球病例增长曲线</p>
+                    </div>
+                    <div class="center-offline-mid">
+                        <div id="line" style="width: 100%;height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧 -->
+            <div class="right fr">
+                <span class="right-title">数据查询</span>
+                <div class="right-top">
+                    <div class="right-top-content">
+                        <span class="name">国家名:</span>
+                        <span class="text">
+                            <input list="country-list" id="country-name" placeholder="请输入国家或选择国家"/>
+                            <datalist id="country-list">
+                            </datalist>
+                        </span>
+                    </div>
+                    <div class="right-top-content">
+                        <span class="name">时间：</span>
+                        <span class="text"><input type="date" id="time" min="2020-01-22" max="2020-03-23" /></span>
+                    </div>
+                    <div class="right-top-content">
+                        <span class="name">查询: </span>
+                        <span class="text"><button id="search-btn">查询</button></span>
+                    </div>
+                    <div class="right-top-content">
+                        <span class="name"></span>
+                        <span class="text"></span>
+                    </div>
+                </div>
+                <div class="right-mid">
+                    <div class="right-mid-header">
+                        详细信息
+                    </div>
+                    <div class="right-mid-scroll">
+                        <div class="right-mid-content">
+                            <div class="right-top-content">
+                                <span class="name">康复数:</span>
+                                <span class="text" id="recovery-count"></span>
+                            </div>
+                            <div class="right-top-content">
+                                <span class="name">死亡数:</span>
+                                <span class="text"></span>
+                            </div>
+                            <div class="right-top-content">
+                                <span class="name">确诊数:</span>
+                                <span class="text"></span>
+                            </div>
+                            <div class="right-top-content">
+                                <span class="name">xxx:</span>
+                                <span class="text"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-bottom">
+                    <div class="right-mid-header">
+                        实时监控
+                    </div>
+                    <div class="right-bottom-content">
+                        <div id="earth" style="width: 100%;height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="static/js/bar.js"></script>
+<script src="static/js/pie.js"></script>
+<script src="static/js/gauge.js"></script>
+<script src="static/js/3dearth.js"></script>
+<script src="static/js/layui.js"></script>
+<script src="static/js/map.js"></script>
+<script src="static/js/line.js"></script>
+<script src="static/js/search.js"></script>
+</html>
